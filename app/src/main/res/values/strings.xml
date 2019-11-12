@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">WeatherAppThatWorks</string>
+
+    <string name="_40">40</string>
+    <string name="c">°C</string>
+    <string name="my_city">My city</string>
+    <string name="sunny">Sunny</string>
+    <string name="search_the_city">Search the city</string>
+    <string name="go">GO</string>
+
+</resources>
