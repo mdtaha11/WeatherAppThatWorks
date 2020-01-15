@@ -9,6 +9,7 @@ android:background="@drawable/ww"
 tools:context=".MainActivity">
 
 
+
 <TextView
     android:id="@+id/textView_temp"
 

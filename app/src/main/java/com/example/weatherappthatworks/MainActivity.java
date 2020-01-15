@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     String cName;
 
-    class weather extends AsyncTask<String, Void, String> {
+    static class weather extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... strings) {
             try {
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 String str = "";
                 while (data != -1) {
                     char ch = (char) data;
-                    str = str + ch;
+                    str = str+ ch;
                     data = br.read();
 
 
@@ -79,13 +79,15 @@ public class MainActivity extends AppCompatActivity {
                     JSONObject j = new JSONObject(jsonObject.getString("main"));
 
                     String temp = j.getString("temp");
+                    String s="";
                     for (int k = 0; k < temp.length(); k++) {
 
                         if (temp.charAt(k) =='.')
                         {
-                            temp.substring(0, k );
+                           break;
 
-                        }
+                        }else
+                            s=s+temp.charAt(k);
                     }
                     String weatherData = jsonObject.getString("weather");
                     JSONArray array = new JSONArray(weatherData);
@@ -97,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.i("tem",temp);
                     Log.i("description", des);
 
-                    tempe.setText(temp);
+                    tempe.setText(s);
                     type.setText(des);
 
                 } catch (Exception e) {
